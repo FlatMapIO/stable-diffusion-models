@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "globby": "^13.2.2",
+    "prask": "^2.1.0"
+  },
+  "devDependencies": {
+    "bun-types": "^1.0.3",
+    "prettier": "^3.0.3"
+  }
+}

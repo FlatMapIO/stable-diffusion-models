@@ -1,0 +1,113 @@
+import { Model } from "src/types";
+
+export default {
+  huggingface: [
+    {
+      refer: 'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/tree/main',
+      repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
+      filename: "sd_xl_offset_example-lora_1.0.safetensors",
+    },
+  ],
+  civital: [
+    {
+      desc: "Pop Mart Toy",
+      refer: "https://civitai.com/models/104024",
+      model_id: "104024",
+      version_id: "111456",
+      alias: "pop-mart-toy-v1.0-sd15",
+    },
+    {
+      desc: "xl_more_art-full / xl_real / Enhancer",
+      refer: "https://civitai.com/models/124347",
+      alias: "xl-more-art-full-xl-real-enhancer-v1.0-sdxl",
+      model_id: "124347",
+      version_id: "152309",
+    },
+    {
+      desc: "GAME DEV TOOLS 03 / TOPO",
+      refer: "https://civitai.com/models/105670/game-dev-tools-03-topo",
+      alias: "game-dev-tools-03-topo-v4-sd15",
+      model_id: "105670",
+      version_id: "117955",
+    },
+    {
+      desc: "niji - Designer_BlindBox v1.0",
+      refer: "https://civitai.com/models/111927",
+      alias: "niji-designer-blindbox-v1.0-sd15",
+      model_id: "111927",
+      version_id: "120802",
+    },
+    {
+      desc: "XL - Designer_BlindBox v1.0",
+      refer: "https://civitai.com/models/127819/xl-designerblindbox",
+      alias: "designer-blindbox-v1.0-sdxl",
+      model_id: "127819",
+      version_id: "139870",
+    },
+    {
+      desc: "figure_chibi style Q版人物手办风 v1.0",
+      refer: "https://civitai.com/models/106970/figurechibi-style-q",
+      alias: "figure-chibi-style-q-v1.0-sd15",
+      model_id: "106970",
+      version_id: "114979",
+    },
+    {
+      desc: "Marble (Make everything into marble)",
+      refer:
+        "https://civitai.com/models/70538/marble-make-everything-into-marble",
+      alias: "marble-sd15",
+      model_id: "70538",
+      version_id: "75208",
+    },
+    {
+      desc: "XP 3D : C4D,3D style on Midjourney v1.0",
+      refer: "https://civitai.com/models/92695/xp-3d-c4d3d-style-on-midjourney",
+      alias: "xp-3d-style-on-midjourney-v1.0-sd15",
+      model_id: "92695",
+      version_id: "98815",
+    },
+    {
+      desc: "blindbox/大概是盲盒 v1 mix",
+      refer: "https://civitai.com/models/25995",
+      model_id: "25995",
+      version_id: "32988",
+      alias: "blindbox-v1-mix-sd15",
+    },
+    {
+      desc: "Minion Style - Make your own Minions!",
+      refer:
+        "https://civitai.com/models/147313/minion-style-make-your-own-minions",
+      model_id: "147313",
+      version_id: "164270",
+      alias: "minion-style-v1.0-sd15",
+    },
+    {
+      desc: "3D rendering style 3DMM_V12",
+      refer: "https://civitai.com/models/73756/3d-rendering-style",
+      model_id: "73756",
+      version_id: "107366",
+      alias: "3d-rendering-style-v12-sd15",
+    },
+    {
+      desc: "Clay Render Style/白模渲染风格 v1.5.5",
+      refer: "https://civitai.com/models/108464?modelVersionId=136620",
+      model_id: "108464",
+      version_id: "136620",
+      alias: "clay-render-style-v1.5.5-sd15",
+    },
+    {
+      desc: "blindbox/大概是盲盒 v3",
+      refer: "https://civitai.com/models/25995",
+      model_id: "25995",
+      version_id: "48150",
+      alias: "blindbox-v3-sd15",
+    },
+    {
+      desc: "3d aniaml v1.0",
+      refer: "https://civitai.com/models/128700",
+      alias: "3d-aniaml-v1.0-sd15",
+      model_id: "128700",
+      version_id: "140953",
+    },
+  ],
+} satisfies Model;
