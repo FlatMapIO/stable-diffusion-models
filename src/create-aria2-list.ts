@@ -1,9 +1,9 @@
 import { globbySync } from "globby";
 import * as path from "node:path";
-import { getCivitalModelInfo } from "./lib/civital";
+import { createAria2DownloadEntry } from "./lib/aria2";
+import { getCivitaiModelInfo, CIVITAI_MODEL_API_URL } from "./lib/civitai";
 import { getHfBlobInfo, resolveHfFileUrl } from "./lib/hf";
 import { Model } from "./types";
-import { createAria2DownloadEntry } from "./lib/aria2";
 const dir = path.join(import.meta.dir, "models");
 const pattern = path.join(dir, "**/*.ts");
 
@@ -63,16 +63,16 @@ async function modelsToAriaInput(define: Define) {
     });
   }
 
-  for (const it of define.model.civital ?? []) {
+  for (const it of define.model.civitai ?? []) {
     tasks.push(async () => {
-      const info = await getCivitalModelInfo(it.model_id);
+      const info = await getCivitaiModelInfo(it.model_id);
       if (!info.success) throw new Error(info.error);
 
       const { type, modelVersions } = info.data;
 
       if (!define.path.includes(type.toLowerCase())) {
         throw new Error(
-          `civital model type is ${type}, placement is ${define.path}`
+          `civitai model type is not match? type=${type}, placement=${define.path}`
         );
       }
 
@@ -80,11 +80,13 @@ async function modelsToAriaInput(define: Define) {
         (m) => String(m.id) === String(it.version_id)
       );
       if (!version)
-        throw new Error(`version not found, ${it.model_id}/${it.version_id}`);
+        throw new Error(
+          `model=${it.model_id} version=${it.version_id} not found.\nInspect using 'bun src/civitai-view.ts ${it.model_id}'`
+        );
       const file = version.files.find((it) => it.primary);
       if (!file)
         throw new Error(
-          `primary files is not found, ${it.model_id}/${it.version_id}`
+          `primary files is not found, ${CIVITAI_MODEL_API_URL}/${it.model_id}`
         );
       const entry = createAria2DownloadEntry({
         url: file.downloadUrl,
@@ -106,11 +108,9 @@ async function modelsToAriaInput(define: Define) {
   }
 
   const entries = await Promise.all(tasks.map((it) => it()));
-  return entries.length > 0 ? entries.join("\n\n") : null;
+  return entries.length === 0 ? `# ${define.path}` : entries.join("\n\n");
 }
 
-const data = (
-  await Promise.all(getDefines().flatMap(modelsToAriaInput))
-).filter((it) => it !== null);
+const data = await Promise.all(getDefines().flatMap(modelsToAriaInput));
 
 Bun.write("manifest.aria2.txt", data.join("\n"));

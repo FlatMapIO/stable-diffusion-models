@@ -1,10 +1,11 @@
-import { Model } from 'src/types';
+import { Model } from "src/types";
 
 export default {
   huggingface: [
     {
-      "repo_id": "lllyasviel/misc",
-      "filename": "xlvaeapp.pth",
+      refer: 'https://github.com/lllyasviel/Fooocus',
+      repo_id: "lllyasviel/misc",
+      filename: "xlvaeapp.pth",
     },
-  ]
-} satisfies Model
+  ],
+} satisfies Model;

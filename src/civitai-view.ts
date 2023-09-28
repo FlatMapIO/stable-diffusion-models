@@ -1,7 +1,7 @@
 import { basename, extname } from "node:path";
 import { exit } from "node:process";
-import { select, log } from "prask";
-import { getCivitalModelInfo, type File } from "./lib/civital";
+import { log, select } from "prask";
+import { getCivitaiModelInfo, type File } from "./lib/civitai";
 const argv = Bun.argv.slice(2);
 
 function usage() {
@@ -15,7 +15,7 @@ usage();
 
 async function main(modelId: string) {
   try {
-    const info = await getCivitalModelInfo(modelId);
+    const info = await getCivitaiModelInfo(modelId);
 
     if (!info.success) {
       log.error(info.error);

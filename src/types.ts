@@ -19,6 +19,6 @@ export type UrlModel = ModelBase & {
 
 export type Model = {
   huggingface?: HFModel[];
-  civital?: CivitaiModel[];
+  civitai?: CivitaiModel[];
   url?: UrlModel[];
 };

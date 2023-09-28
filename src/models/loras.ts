@@ -3,13 +3,22 @@ import { Model } from "src/types";
 export default {
   huggingface: [
     {
-      refer: 'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/tree/main',
+      refer:
+        "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/tree/main",
       repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
       filename: "sd_xl_offset_example-lora_1.0.safetensors",
     },
-  ],
-  civital: [
+
+    // CLIPVision model (needed for styles model)
     {
+      repo_id: "openai/clip-vit-large-patch14",
+      filename: "pytorch_model.bin",
+    },
+  ],
+  civitai: [
+    {
+      // Pop Mart Toy
+
       desc: "Pop Mart Toy",
       refer: "https://civitai.com/models/104024",
       model_id: "104024",
@@ -30,6 +39,7 @@ export default {
       model_id: "105670",
       version_id: "117955",
     },
+
     {
       desc: "niji - Designer_BlindBox v1.0",
       refer: "https://civitai.com/models/111927",
@@ -67,6 +77,8 @@ export default {
       version_id: "98815",
     },
     {
+      // blindbox/大概是盲盒
+
       desc: "blindbox/大概是盲盒 v1 mix",
       refer: "https://civitai.com/models/25995",
       model_id: "25995",
@@ -74,6 +86,8 @@ export default {
       alias: "blindbox-v1-mix-sd15",
     },
     {
+      // blindbox/大概是盲盒
+
       desc: "Minion Style - Make your own Minions!",
       refer:
         "https://civitai.com/models/147313/minion-style-make-your-own-minions",
@@ -82,6 +96,8 @@ export default {
       alias: "minion-style-v1.0-sd15",
     },
     {
+      // blindbox/大概是盲盒
+
       desc: "3D rendering style 3DMM_V12",
       refer: "https://civitai.com/models/73756/3d-rendering-style",
       model_id: "73756",
@@ -89,6 +105,8 @@ export default {
       alias: "3d-rendering-style-v12-sd15",
     },
     {
+      // blindbox/大概是盲盒
+
       desc: "Clay Render Style/白模渲染风格 v1.5.5",
       refer: "https://civitai.com/models/108464?modelVersionId=136620",
       model_id: "108464",
@@ -96,6 +114,8 @@ export default {
       alias: "clay-render-style-v1.5.5-sd15",
     },
     {
+      // 更新了V3版本，调整了眼睛，俗话说眼睛是心灵的窗口。但是目前还是实验性质的，从稳定性上还是推荐v1_mix版本。
+
       desc: "blindbox/大概是盲盒 v3",
       refer: "https://civitai.com/models/25995",
       model_id: "25995",
