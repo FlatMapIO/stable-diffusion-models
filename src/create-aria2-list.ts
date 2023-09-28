@@ -3,6 +3,7 @@ import * as path from "node:path";
 import { getCivitalModelInfo } from "./lib/civital";
 import { getHfBlobInfo, resolveHfFileUrl } from "./lib/hf";
 import { Model } from "./types";
+import { createAria2DownloadEntry } from "./lib/aria2";
 const dir = path.join(import.meta.dir, "models");
 const pattern = path.join(dir, "**/*.ts");
 
@@ -105,12 +106,11 @@ async function modelsToAriaInput(define: Define) {
   }
 
   const entries = await Promise.all(tasks.map((it) => it()));
-  return entries.join("\n\n");
+  return entries.length > 0 ? entries.join("\n\n") : null;
 }
 
-const data = await Promise.all(getDefines().flatMap(modelsToAriaInput));
+const data = (
+  await Promise.all(getDefines().flatMap(modelsToAriaInput))
+).filter((it) => it !== null);
 
-import * as fs from "node:fs";
-import { createAria2DownloadEntry } from "./lib/aria2";
-fs.writeFileSync("node.manifest.aria2.txt", data.join("\n"));
 Bun.write("manifest.aria2.txt", data.join("\n"));
