@@ -70,10 +70,17 @@ async function modelsToAriaInput(define: Define) {
 
       const { type, modelVersions } = info.data;
 
-      if (!define.path.includes(type.toLowerCase())) {
+      if (
+        (type === "Checkpoint" && !define.path.endsWith("checkpoints")) ||
+        (type === "LORA" && !define.path.endsWith("loras")) ||
+        (type === "TextualInversion" && !define.path.endsWith("embeddings"))
+      ) {
         throw new Error(
           `civitai model type is not match? type=${type}, placement=${define.path}`
         );
+      }
+
+      if (!define.path.includes(type.toLowerCase())) {
       }
 
       const version = modelVersions.find(
@@ -100,7 +107,7 @@ async function modelsToAriaInput(define: Define) {
   for (const it of define.model.url ?? []) {
     tasks.push(async () =>
       createAria2DownloadEntry({
-        url: it.url,
+        url: it.downloadUrl,
         dir: define.path,
         out: it.filename,
       })
