@@ -29,5 +29,5 @@ export default {
       alias: "pytorch_model",
     },
   ],
-  url: [...sources],
+  // url: [...sources],
 } as Model;
