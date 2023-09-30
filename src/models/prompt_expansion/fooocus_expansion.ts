@@ -1,25 +1,9 @@
 import { basename } from "path";
 import { Model } from "~/types";
 
-async function getCodeList() {
-
-  const branch = "moonride-main";
-
-  const data = await fetch(
-    `https://api.github.com/repos/MoonRide303/Fooocus-MRE/git/trees/${branch}?recursive=1`
-  ).then((it) => it.json<{ tree: { path: string }[] }>());
-
-  return data.tree
-    .filter((it) =>
-      it.path.startsWith("models/prompt_expansion/fooocus_expansion/")
-    )
-    .map((it) => ({
-      url: `https://raw.githubusercontent.com/MoonRide303/Fooocus-MRE/${branch}/${it.path}`,
-      filename: basename(it.path),
-    }));
-}
-
-const sources = await getCodeList();
+console.log(
+  "⚠️ fooocus_expansion folder shuold be performed code sync later: https://github.com/FlatMapIO/Fooocus-MRE-Docker/blob/huodon/prepare.fish#L28C3-L30"
+);
 
 export default {
   huggingface: [
