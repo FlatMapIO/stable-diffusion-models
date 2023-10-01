@@ -93,7 +93,7 @@ export default {
       alias: "faetastic-v1.6-sdxl",
     },
     {
-      desc: "SDVN5-3DCuteWave v1.0",
+      desc: "SDVN5-3DCuteWave v1.0 (score 3)",
       refer: "https://civitai.com/models/103178/sdvn5-3dcutewave",
       alias: "3d-cute-wave-v1.0-sd15",
       model_id: "103178",

@@ -14,6 +14,18 @@ export default {
       repo_id: "lllyasviel/misc",
       filename: "fooocus_upscaler_s409985e5.bin",
     },
+    // {
+    //   repo_id: "uwg/upscaler",
+    //   filename: "ESRGAN/4x-UltraSharp.pth",
+    // },
+    // {
+    //   repo_id: "uwg/upscaler",
+    //   filename: "ESRGAN/4x_NMKD-Siax_200k.pth",
+    // },
+    // {
+    //   repo_id: "uwg/upscaler",
+    //   filename: "ESRGAN/4x_Nickelback_70000G.pth",
+    // },
   ],
   url: [
     {

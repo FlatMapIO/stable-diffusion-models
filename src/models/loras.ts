@@ -8,12 +8,6 @@ export default {
       repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
       filename: "sd_xl_offset_example-lora_1.0.safetensors",
     },
-
-    // CLIPVision model (needed for styles model)
-    {
-      repo_id: "openai/clip-vit-large-patch14",
-      filename: "pytorch_model.bin",
-    },
   ],
   civitai: [
     {

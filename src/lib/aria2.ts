@@ -1,3 +1,5 @@
+const urls = new Set<string>()
+
 export function createAria2DownloadEntry({
   url,
   dir,
@@ -12,6 +14,11 @@ export function createAria2DownloadEntry({
     value: string;
   };
 }): string {
+  if (urls.has(url)) {
+    throw new Error(`duplicate url=${url} dir=${dir}`);
+  }
+  urls.add(url);
+
   const args = ["continue=true", `dir=${dir}`];
   if (out) {
     args.push(`out=${out}`);
