@@ -1,5 +1,6 @@
 import { globbySync } from "globby";
 import * as path from "node:path";
+import * as fs from "node:fs";
 import { createAria2DownloadEntry } from "./lib/aria2";
 import { getCivitaiModelInfo, CIVITAI_MODEL_API_URL } from "./lib/civitai";
 import { getHfBlobInfo, resolveHfFileUrl } from "./lib/hf";
@@ -56,7 +57,9 @@ async function modelsToAriaInput(define: Define) {
         url: url,
         dir: define.path,
         checksum: { type: "sha-256", value: info.sha256 },
-        out: it.alias ? it.alias + path.extname(it.filename) : path.basename(it.filename),
+        out: it.alias
+          ? it.alias + path.extname(it.filename)
+          : path.basename(it.filename),
       });
       return entry;
     });
@@ -117,6 +120,13 @@ async function modelsToAriaInput(define: Define) {
   return entries.length === 0 ? `# ${define.path}` : entries.join("\n\n");
 }
 
-const data = await Promise.all(getDefines().flatMap(modelsToAriaInput));
+async function main() {
+  const data = await Promise.all(getDefines().flatMap(modelsToAriaInput));
 
-Bun.write("manifest.aria2.txt", data.join("\n"));
+  if (!fs.existsSync("./storage")) {
+    fs.mkdirSync("./storage");
+  }
+  Bun.write("./storage/manifest.aria2.txt", data.join("\n"));
+}
+
+main();

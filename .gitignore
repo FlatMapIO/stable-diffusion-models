@@ -1,4 +1,5 @@
 node_modules
 *.aria2.txt
 /models
-custom_nodes
+/custom_nodes
+/storage
