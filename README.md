@@ -42,5 +42,6 @@ ln -s $PWD/models  Fooocus/
 - [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack)
 - [ComfyUI's ControlNet Auxiliary Preprocessors](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)
+  - [ComfyUI Nodes Info](https://ltdrdata.github.io/)
 - [Fooocus Advanced](https://github.com/lllyasviel/Fooocus/discussions/117)
 - [Rich-Text-to-Image](https://github.com/songweige/rich-text-to-image)

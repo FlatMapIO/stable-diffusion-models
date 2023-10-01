@@ -123,5 +123,16 @@ export default {
       model_id: "128700",
       version_id: "140953",
     },
+    {
+      name: "T Pose | 1MB Pose LoRA",
+      refer: "https://civitai.com/models/87017",
+      desc: "<p>T Pose | 1MB Pose LoRA</p><p><br /><strong>T POSE TO ASSERT DOMINANCE!!! YOUR",
+      model_id: "87017",
+      version_id: "92575",
+      sha256:
+        "CB8404EFACD2EA1CFDE4DB00A32F3C9DEAF3B31118CA592BFDE009743429C07A",
+      alias: "TPose-sd15.safetensors",
+      downloadUrl: "https://civitai.com/api/download/models/92575",
+    },
   ],
 } satisfies Model;
