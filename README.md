@@ -1,42 +1,24 @@
+集项目是用于管理 stable diffusion 的脚本集
 
+`src/manifest` 中维护了一个结构和 ComfyUI/models 相同的结构， 在 typescript 中声明模型链接， 可以是 huggingface, civitai, url 等。 `bun src/create-aria2-list.ts` 会生成一个 `./storage/manifest.aria2.txt` 文件。`aria2c -i manifest.aria2.txt` 可以将文件清单下载到本地， 并自动跳过已下载的文件。
 
 ## Commands
 
-1. Edit `src/models/*.ts`
+2. 查看 civital 模型, 该脚本用于模型版本选择， 最终打印一个模型下载的 config item
 
-2. Pick civital model
-
-```
+```bash
 bun src/models/civital-view.ts <model-id>
-
 ```
 
-3. Create aria2 download list file
+3. 创建 aria2c 下载清单
 
-```
+```bash
 bun src/create-aria2-list.ts
-
-# manifest.aria2.txt will be created
-
-```
-
-> NOTE: aria2c use lowercase `https_proxy` as a proxy variable
-
-4. Download files to modules
-
-```
+cd storage
 aria2c -i manifest.aria2.txt
 ```
 
-5. Link models
-
-```
-rm -rf ComfyUI/models Fooocus-MRE/models Fooocus/models
-
-ln -s $PWD/models ComfyUI/
-ln -s $PWD/models  Fooocus-MRE/
-ln -s $PWD/models  Fooocus/
-```
+> 注意: aria2c 识别`https_proxy` 变量自动代理
 
 # Resources
 
