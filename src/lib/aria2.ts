@@ -14,6 +14,9 @@ export function createAria2DownloadEntry({
     value: string;
   };
 }): string {
+  if (!url) {
+    throw new Error(`url is required, dir=${dir}`);
+  }
   if (urls.has(url)) {
     throw new Error(`duplicate url=${url} dir=${dir}`);
   }

@@ -29,7 +29,8 @@ export default {
   ],
   url: [
     {
-      url: "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+      downloadUrl:
+        "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
       filename: "RealESRGAN_x4plus.pth",
     },
   ],

@@ -16,10 +16,11 @@ bun src/models/civital-view.ts <model-id>
 ```
 bun src/create-aria2-list.ts
 
-
 # manifest.aria2.txt will be created
 
 ```
+
+> NOTE: aria2c use lowercase `https_proxy` as a proxy variable
 
 4. Download files to modules
 

@@ -56,7 +56,7 @@ async function modelsToAriaInput(define: Define) {
         url: url,
         dir: define.path,
         checksum: { type: "sha-256", value: info.sha256 },
-        out: it.alias ? it.alias + path.extname(it.filename) : it.filename,
+        out: it.alias ? it.alias + path.extname(it.filename) : path.basename(it.filename),
       });
       return entry;
     });
