@@ -1,4 +1,4 @@
-import { Model } from "src/types";
+import { Model } from "~/types";
 
 export default {
   huggingface: [
@@ -31,14 +31,6 @@ export default {
     //   * T2I-Adapter 的使用方式与 ComfyUI 中的 ControlNet 相同：使用 ControlNetLoader 节点。
     // - 精确控制 AI 图像生成的破冰方案，ControlNet 和 T2I-Adapter: https://zhuanlan.zhihu.com/p/608609941
 
-    // t2i adapter SDXL
-    {
-      refer: "https://huggingface.co/TencentARC",
-      repo_id: "TencentARC/t2i-adapter-sketch-sdxl-1.0",
-      filename: "diffusion_pytorch_model.safetensors",
-      alias: "t2iadapter-xl-sketch",
-    },
-
     {
       refer: "https://huggingface.co/TencentARC",
       desc: "线条引导",
@@ -54,7 +46,7 @@ export default {
       alias: "t2iadapter-xl-openpose",
     },
     {
-      refer: "https://huggingface.co/TencentARC/t2i-adapter-sketch-sdxl-1.0",
+      refer: "https://huggingface.co/TencentARC",
       desc: "素描引导",
       repo_id: "TencentARC/t2i-adapter-sketch-sdxl-1.0",
       filename: "diffusion_pytorch_model.safetensors",

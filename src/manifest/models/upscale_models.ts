@@ -1,4 +1,4 @@
-import { Model } from "src/types";
+import { Model } from "~/types";
 
 export default {
   huggingface: [

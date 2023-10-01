@@ -4,8 +4,8 @@ import { createAria2DownloadEntry } from "./lib/aria2";
 import { getCivitaiModelInfo, CIVITAI_MODEL_API_URL } from "./lib/civitai";
 import { getHfBlobInfo, resolveHfFileUrl } from "./lib/hf";
 import { Model } from "./types";
-const dir = path.join(import.meta.dir, "models");
-const pattern = path.join(dir, "**/*.ts");
+const manifestFolder = path.join(import.meta.dir, "manifest");
+const pattern = path.join(manifestFolder, "**/*.ts");
 
 type Define = {
   path: string;
@@ -19,12 +19,11 @@ function getDefines() {
   for (const file of files) {
     const code = import.meta.require(file);
 
-    const codePath = path.relative(import.meta.dir, file);
-    const defineFolder = codePath.slice(0, -3);
-
+    const codeFile = path.relative(import.meta.dir, file);
+    const codePath = codeFile.slice("manifest/".length, -3);
     if ("default" in code) {
       defines.push({
-        path: defineFolder,
+        path: codePath,
         model: code.default as Model,
       });
     }

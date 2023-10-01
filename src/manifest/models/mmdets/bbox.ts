@@ -12,7 +12,8 @@ export default {
 
   url: [
     {
-      url: "https://raw.githubusercontent.com/Bing-su/dddetailer/master/config/mmdet_anime-face_yolov3.py",
+      downloadUrl:
+        "https://raw.githubusercontent.com/Bing-su/dddetailer/master/config/mmdet_anime-face_yolov3.py",
       filename: "mmdet_anime-face_yolov3.py",
     },
   ],
