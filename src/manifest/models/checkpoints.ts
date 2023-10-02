@@ -1,4 +1,4 @@
-import { Model } from "../types";
+import { Model } from "~/types";
 
 export default {
   huggingface: [
@@ -25,15 +25,10 @@ export default {
     },
 
     // unCLIP models
-    {
-      repo_id: "comfyanonymous/illuminatiDiffusionV1_v11_unCLIP",
-      filename: "illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors",
-    },
-    {
-      repo_id: "comfyanonymous/wd-1.5-beta2_unCLIP",
-      refer: "https://comfyanonymous.github.io/ComfyUI_examples/unclip/",
-      filename: "wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors",
-    },
+    // {
+    //   repo_id: "comfyanonymous/illuminatiDiffusionV1_v11_unCLIP",
+    //   filename: "illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors",
+    // },
   ],
   civitai: [
     {
