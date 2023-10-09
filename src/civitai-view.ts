@@ -98,9 +98,9 @@ async function main(modelId: string) {
 
     const baseModel = version.baseModel.toLowerCase();
     const alias = baseModel.includes("sdxl")
-      ? `${name}-sdxl${ext}`
+      ? `${name}-sdxl`
       : baseModel.includes("1.5")
-      ? `${name}-sd15${ext}`
+      ? `${name}-sd15`
       : filename;
 
     console.log({

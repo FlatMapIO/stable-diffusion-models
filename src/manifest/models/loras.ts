@@ -99,6 +99,16 @@ export default {
       alias: "3d-rendering-style-v12-sd15",
     },
     {
+      name: "3D模型丨可爱化SDXL版",
+      refer: "https://civitai.com/models/138583",
+      desc: "<h3 id=\"heading-6\">The cute sdxl version is updated, mainly for the texture of t",
+      model_id: "138583",
+      version_id: "177483",
+      sha256: "D2777C8D7C8A7D6F5773542BBC10A3BF26993687868FE24C83E8AB56370F29F5",
+      alias: "3d-model-cute-v2.0-sdxl",
+      downloadUrl: "https://civitai.com/api/download/models/177483"
+    },
+    {
       // blindbox/大概是盲盒
 
       desc: "Clay Render Style/白模渲染风格 v1.5.5",
