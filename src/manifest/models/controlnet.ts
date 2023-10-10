@@ -52,6 +52,21 @@ export default {
       filename: "diffusion_pytorch_model.safetensors",
       alias: "t2iadapter-xl-sketch",
     },
+
+    {
+      refer: "https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0",
+      desc: "ControlNet OpenPose v2 sdxl",
+      repo_id: "thibaud/controlnet-openpose-sdxl-1.0",
+      filename: "control-lora-openposeXL2-rank256.safetensors",
+    },
+    {
+      refer:
+        "https://huggingface.co/SargeZT/controlnet-sd-xl-1.0-softedge-dexined",
+      desc: "ControlNet SoftImage sdxl",
+      repo_id: "SargeZT/controlnet-sd-xl-1.0-softedge-dexined",
+      filename: "controlnet-sd-xl-1.0-softedge-dexined.safetensors",
+    },
+
     // SD 1.5
     // TODO
   ],
