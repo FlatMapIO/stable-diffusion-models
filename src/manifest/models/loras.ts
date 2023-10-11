@@ -144,5 +144,16 @@ export default {
       alias: "TPose-sd15.safetensors",
       downloadUrl: "https://civitai.com/api/download/models/92575",
     },
+
+    {
+      name: "Jack-o-lantern Witch Hat",
+      refer: "https://civitai.com/models/154871",
+      desc: "<p><a rel=\"ugc\" href=\"https://civitai.com/articles/2397\"><strong><span style=\"co",
+      model_id: "154871",
+      version_id: "173621",
+      sha256: "9795EC876D55E9C73353B94E9B484FDE1744A117C9414C4B7B16209FEA2EF1A5",
+      alias: "Jack-o-lantern_Anime-sd15",
+      downloadUrl: "https://civitai.com/api/download/models/173621"
+    }
   ],
 } satisfies Model;

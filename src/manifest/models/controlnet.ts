@@ -21,6 +21,13 @@ export default {
       repo_id: "stabilityai/control-lora",
       filename: "control-LoRAs-rank256/control-lora-sketch-rank256.safetensors",
     },
+
+    // sd 1.5
+    ...["canny", "inpaint", "openpose"].map((it) => ({
+      repo_id: "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+      filename: `control_v11p_sd15_${it}_fp16.safetensors`,
+    })),
+
     // =========================================================================
     // code:        https://github.com/TencentARC/T2I-Adapter
     // example:     https://comfyanonymous.github.io/ComfyUI_examples/controlnet/
