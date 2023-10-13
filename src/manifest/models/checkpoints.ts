@@ -15,7 +15,7 @@ export default {
       filename: "sd_xl_refiner_1.0.safetensors",
     },
     {
-    repo_id: "stabilityai/stable-diffusion-xl-refiner-1.0",
+      repo_id: "stabilityai/stable-diffusion-xl-refiner-1.0",
       filename: "sd_xl_refiner_1.0_0.9vae.safetensors",
     },
 
@@ -44,9 +44,21 @@ export default {
       desc: "<p>The wild journey continues with<strong> Juggernaut,</strong> but this time ba",
       model_id: "133005",
       version_id: "166909",
-      sha256: "70229E1D563A36FDF9F006368611DD34A176E2BB9DBE9F29696ECAABA3969521",
+      sha256:
+        "70229E1D563A36FDF9F006368611DD34A176E2BB9DBE9F29696ECAABA3969521",
       alias: "juggernautXL_version5-sdxl",
-      downloadUrl: "https://civitai.com/api/download/models/166909"
+      downloadUrl: "https://civitai.com/api/download/models/166909",
+    },
+    {
+      name: "FormulaXL - 公式XL (ComfyUI)",
+      refer: "https://civitai.com/models/129922",
+      desc: '<p><strong><em><span style="color:rgb(250, 82, 82)">Now that you have been lured',
+      model_id: "129922",
+      version_id: "160525",
+      sha256:
+        "F561D8F8E14F903ED8B0A0BB72D5B6A21ABFBFC03CB9077AA02A74A3C6806781",
+      alias: "formulaxlXLComfyui_v20Pruned-sdxl",
+      downloadUrl: "https://civitai.com/api/download/models/160525",
     },
     {
       desc: "Dark Sushi 2.5D 大颗寿司2.5D",
