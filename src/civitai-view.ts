@@ -83,7 +83,8 @@ async function main(modelId: string) {
       });
 
       if (selectFile) {
-        file = version.files.find((it) => it.id === Number(selectFile))!;
+        const id = Number(selectFile.split(' | ').at(0))
+        file = version.files.find((it) => it.id === id)!;
       }
     }
 
