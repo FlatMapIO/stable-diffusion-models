@@ -60,13 +60,6 @@ export default {
       alias: "mysterious-v4.0-sdxl",
     },
     {
-      desc: "blue_pencil-XL v0.5.0",
-      refer: "https://civitai.com/models/119012/bluepencil-xl",
-      model_id: "119012",
-      version_id: "165974",
-      alias: "blue-pencil-v0.5.0-xl",
-    },
-    {
       desc: "Starlight XL 星光 Animated v2",
       refer: "https://civitai.com/models/143043/starlight-xl-animated",
       model_id: "143043",

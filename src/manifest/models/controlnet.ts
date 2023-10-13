@@ -2,6 +2,7 @@ import { Model } from "~/types";
 
 export default {
   huggingface: [
+    // sdxl
     {
       refer: "https://huggingface.co/stabilityai/control-lora",
       repo_id: "stabilityai/control-lora",
