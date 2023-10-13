@@ -39,6 +39,16 @@ export default {
       version_id: "169718",
     },
     {
+      name: "Juggernaut XL",
+      refer: "https://civitai.com/models/133005",
+      desc: "<p>The wild journey continues with<strong> Juggernaut,</strong> but this time ba",
+      model_id: "133005",
+      version_id: "166909",
+      sha256: "70229E1D563A36FDF9F006368611DD34A176E2BB9DBE9F29696ECAABA3969521",
+      alias: "juggernautXL_version5-sdxl",
+      downloadUrl: "https://civitai.com/api/download/models/166909"
+    },
+    {
       desc: "Dark Sushi 2.5D 大颗寿司2.5D",
       refer: "https://civitai.com/models/48671",
       model_id: "48671",
