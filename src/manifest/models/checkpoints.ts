@@ -4,21 +4,12 @@ export default {
   huggingface: [
     {
       repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
-      filename: "sd_xl_base_1.0.safetensors",
-    },
-    {
-      repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
       filename: "sd_xl_base_1.0_0.9vae.safetensors",
-    },
-    {
-      repo_id: "stabilityai/stable-diffusion-xl-refiner-1.0",
-      filename: "sd_xl_refiner_1.0.safetensors",
     },
     {
       repo_id: "stabilityai/stable-diffusion-xl-refiner-1.0",
       filename: "sd_xl_refiner_1.0_0.9vae.safetensors",
     },
-
     {
       repo_id: "runwayml/stable-diffusion-v1-5",
       filename: "v1-5-pruned-emaonly.ckpt",
