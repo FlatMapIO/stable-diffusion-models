@@ -8,6 +8,11 @@ export default {
       repo_id: "stabilityai/stable-diffusion-xl-base-1.0",
       filename: "sd_xl_offset_example-lora_1.0.safetensors",
     },
+    {
+      refer: "https://huggingface.co/goofyai/3d_render_style_xl",
+      repo_id: "goofyai/3d_render_style_xl",
+      filename: "3d_render_style_xl.safetensors",
+    },
   ],
   civitai: [
     {
@@ -101,12 +106,13 @@ export default {
     {
       name: "3D模型丨可爱化SDXL版",
       refer: "https://civitai.com/models/138583",
-      desc: "<h3 id=\"heading-6\">The cute sdxl version is updated, mainly for the texture of t",
+      desc: '<h3 id="heading-6">The cute sdxl version is updated, mainly for the texture of t',
       model_id: "138583",
       version_id: "177483",
-      sha256: "D2777C8D7C8A7D6F5773542BBC10A3BF26993687868FE24C83E8AB56370F29F5",
+      sha256:
+        "D2777C8D7C8A7D6F5773542BBC10A3BF26993687868FE24C83E8AB56370F29F5",
       alias: "3d-model-cute-v2.0-sdxl",
-      downloadUrl: "https://civitai.com/api/download/models/177483"
+      downloadUrl: "https://civitai.com/api/download/models/177483",
     },
     {
       // blindbox/大概是盲盒
@@ -148,12 +154,13 @@ export default {
     {
       name: "Jack-o-lantern Witch Hat",
       refer: "https://civitai.com/models/154871",
-      desc: "<p><a rel=\"ugc\" href=\"https://civitai.com/articles/2397\"><strong><span style=\"co",
+      desc: '<p><a rel="ugc" href="https://civitai.com/articles/2397"><strong><span style="co',
       model_id: "154871",
       version_id: "173621",
-      sha256: "9795EC876D55E9C73353B94E9B484FDE1744A117C9414C4B7B16209FEA2EF1A5",
+      sha256:
+        "9795EC876D55E9C73353B94E9B484FDE1744A117C9414C4B7B16209FEA2EF1A5",
       alias: "Jack-o-lantern_Anime-sd15",
-      downloadUrl: "https://civitai.com/api/download/models/173621"
-    }
+      downloadUrl: "https://civitai.com/api/download/models/173621",
+    },
   ],
 } satisfies Model;
