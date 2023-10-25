@@ -13,5 +13,19 @@ export default {
       filename: "pytorch_model.bin",
       alias: "clip_vit14",
     },
+
+
+    // ip adapter
+    {
+
+      repo_id: 'h94/IP-Adapter',
+      filename: 'models/image_encoder/model.safetensors',
+      alias: 'ip-adapter-image-encoder-sd15',
+    },
+    {
+      repo_id: 'h94/IP-Adapter',
+      filename: 'sdxl_models/image_encoder/model.safetensors',
+      alias: 'ip-adapter-image-encoder-sdxl',
+    }
   ],
 } satisfies Model;
