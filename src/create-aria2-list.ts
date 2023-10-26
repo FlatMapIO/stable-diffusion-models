@@ -69,20 +69,16 @@ async function modelsToAriaInput(define: Define) {
     tasks.push(async () => {
       const info = await getCivitaiModelInfo(it.model_id);
       if (!info.success) throw new Error(info.error);
-
-      const { type, modelVersions } = info.data;
+      const { type, modelVersions,  } = info.data;
 
       if (
-        (type === "Checkpoint" && !define.path.endsWith("checkpoints")) ||
+        (type === "Checkpoint" && !define.path.match(/checkpoints|vae/)) ||
         (type === "LORA" && !define.path.endsWith("loras")) ||
         (type === "TextualInversion" && !define.path.endsWith("embeddings"))
       ) {
         throw new Error(
           `civitai model type is not match? type=${type}, placement=${define.path}`
         );
-      }
-
-      if (!define.path.includes(type.toLowerCase())) {
       }
 
       const version = modelVersions.find(
@@ -92,11 +88,12 @@ async function modelsToAriaInput(define: Define) {
         throw new Error(
           `model=${it.model_id} version=${it.version_id} not found.\nInspect using 'bun src/civitai-view.ts ${it.model_id}'`
         );
-      const file = version.files.find((it) => it.primary);
-      if (!file)
-        throw new Error(
-          `primary files is not found, ${CIVITAI_MODEL_API_URL}/${it.model_id}`
-        );
+
+      const file = version.files.find(file => String(file.id) === String(it.file_id))
+      if(!file) {
+        throw new Error(`file not found model_id=${it.model_id} version_id=${it.version_id} file_id=${it.file_id}`);
+      }
+
       const entry = createAria2DownloadEntry({
         url: file.downloadUrl,
         dir: define.path,

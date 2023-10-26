@@ -106,6 +106,7 @@ async function main(modelId: string) {
 
     console.log({
       ...baseOutput,
+      file_id: String(file.id),
       sha256: file.hashes.SHA256,
       alias: alias,
       downloadUrl: file.downloadUrl,

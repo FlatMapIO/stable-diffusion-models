@@ -2,7 +2,7 @@ export const CIVITAI_MODEL_API_URL = "https://civitai.com/api/v1/models/";
 
 export type File = {
   id: number;
-  type: "Model" | "Archive"; // TODO - to string union
+  type: "Model" | "Archive" | 'VAE'; // TODO - to string union
   downloadUrl: string;
   name: string;
   hashes: {
