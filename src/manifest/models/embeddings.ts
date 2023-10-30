@@ -9,9 +9,10 @@ export default {
       model_id: "119032",
       version_id: "175819",
       file_id: "134255",
-      sha256: "A09AD810EA93C0C8ABEE3FA938A683AFD51D5BFA24083CEC1E06D8BA05F4B7F2",
+      sha256:
+        "A09AD810EA93C0C8ABEE3FA938A683AFD51D5BFA24083CEC1E06D8BA05F4B7F2",
       alias: "unaestheticXL_Sky3.1-sdxl",
-      downloadUrl: "https://civitai.com/api/download/models/175819"
+      downloadUrl: "https://civitai.com/api/download/models/175819",
     },
   ],
 } satisfies Model;

@@ -69,7 +69,7 @@ async function modelsToAriaInput(define: Define) {
     tasks.push(async () => {
       const info = await getCivitaiModelInfo(it.model_id);
       if (!info.success) throw new Error(info.error);
-      const { type, modelVersions,  } = info.data;
+      const { type, modelVersions } = info.data;
 
       if (
         (type === "Checkpoint" && !define.path.match(/checkpoints|vae/)) ||
@@ -77,21 +77,25 @@ async function modelsToAriaInput(define: Define) {
         (type === "TextualInversion" && !define.path.endsWith("embeddings"))
       ) {
         throw new Error(
-          `civitai model type is not match? type=${type}, placement=${define.path}`
+          `civitai model type is not match? type=${type}, placement=${define.path}`,
         );
       }
 
       const version = modelVersions.find(
-        (m) => String(m.id) === String(it.version_id)
+        (m) => String(m.id) === String(it.version_id),
       );
       if (!version)
         throw new Error(
-          `model=${it.model_id} version=${it.version_id} not found.\nInspect using 'bun src/civitai-view.ts ${it.model_id}'`
+          `model=${it.model_id} version=${it.version_id} not found.\nInspect using 'bun src/civitai-view.ts ${it.model_id}'`,
         );
 
-      const file = version.files.find(file => String(file.id) === String(it.file_id))
-      if(!file) {
-        throw new Error(`file not found model_id=${it.model_id} version_id=${it.version_id} file_id=${it.file_id}`);
+      const file = version.files.find(
+        (file) => String(file.id) === String(it.file_id),
+      );
+      if (!file) {
+        throw new Error(
+          `file not found model_id=${it.model_id} version_id=${it.version_id} file_id=${it.file_id}`,
+        );
       }
 
       const entry = createAria2DownloadEntry({
@@ -109,7 +113,7 @@ async function modelsToAriaInput(define: Define) {
         url: it.downloadUrl,
         dir: define.path,
         out: it.filename,
-      })
+      }),
     );
   }
 

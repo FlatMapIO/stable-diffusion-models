@@ -27,8 +27,8 @@ async function main(modelId: string) {
     log.info(
       `${model.type} | ${model.name} | ${(model.description ?? "NONE")?.slice(
         0,
-        80
-      )}`
+        80,
+      )}`,
     );
 
     let versionId: string | null = null;
@@ -54,7 +54,7 @@ async function main(modelId: string) {
     }
 
     const version = model.modelVersions.find(
-      (it) => String(it.id) === versionId
+      (it) => String(it.id) === versionId,
     )!;
 
     const baseOutput = {
@@ -78,12 +78,12 @@ async function main(modelId: string) {
         options: version.files.map((it, index) =>
           index === pid
             ? `${it.id} | ${it.name} | PRIMARY`
-            : `${it.id} | ${it.name}`
+            : `${it.id} | ${it.name}`,
         ),
       });
 
       if (selectFile) {
-        const id = Number(selectFile.split(' | ').at(0))
+        const id = Number(selectFile.split(" | ").at(0));
         file = version.files.find((it) => it.id === id)!;
       }
     }

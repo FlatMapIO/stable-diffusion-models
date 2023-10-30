@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "fmt": "prettier -w src/"
+  },
   "dependencies": {
     "globby": "^13.2.2",
     "prask": "^2.1.0"
