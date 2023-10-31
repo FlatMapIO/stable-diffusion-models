@@ -1,3 +1,3 @@
-import { Model } from "~/types";
+import { Model } from '~/types'
 
-export default {} satisfies Model;
+export default {} satisfies Model

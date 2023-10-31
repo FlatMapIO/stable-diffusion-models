@@ -1,5 +1,5 @@
-import { Model } from "~/types";
+import { Model } from '~/types'
 
 export default {
   huggingface: [],
-} satisfies Model;
+} satisfies Model

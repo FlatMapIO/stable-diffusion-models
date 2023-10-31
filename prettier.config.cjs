@@ -1,0 +1,1 @@
+/home/sa/Workspace/dotconfig/linux/home/config/source-code/prettier-base.config.cjs
