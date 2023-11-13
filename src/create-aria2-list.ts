@@ -121,12 +121,32 @@ async function modelsToAriaInput(define: Define) {
   return entries.length === 0 ? `# ${define.path}` : entries.join('\n\n')
 }
 
+
+
+
+const runPromises = async <T>(promises: Promise<T>[], concurrency: number): Promise<T[]> => {
+    const results: T[] = [];
+
+    for (let index = 0; index < promises.length; index += concurrency) {
+        const chunk: Promise<T>[] = promises.slice(index, index + concurrency);
+        const chunkResults = await Promise.all(chunk);
+        results.push(...chunkResults);
+    }
+
+    return results;
+};
+
+
 async function main() {
-  const data = await Promise.all(getDefines().flatMap(modelsToAriaInput))
+
+  // const data = await Promise.all()
+  const data = await runPromises(getDefines().flatMap(modelsToAriaInput), 3)
 
   if (!fs.existsSync('./storage')) {
     fs.mkdirSync('./storage')
   }
+
+  // fs.writeFileSync('./storage/manifest.aria2.txt', data.join('\n'))
   Bun.write('./storage/manifest.aria2.txt', data.join('\n'))
 }
 

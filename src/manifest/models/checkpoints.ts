@@ -36,7 +36,6 @@ export default {
       "juggernautXL_version6Rundiffusion.safetensors",
       "bluePencilXL_v050.safetensors",
       "realisticStockPhoto_v10.safetensors",
-      "realisticVisionV51_v51VAE.safetensors",
     ].map((it) => ({
       repo_id: "lllyasviel/fav_models",
       filename: `fav/${it}`,
